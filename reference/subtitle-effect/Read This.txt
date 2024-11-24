@@ -1,0 +1,23 @@
+Assalamualaikum and hello there^^!
+I am Soriddo Suneku from L'Blanc~en~Noire Anime Fansub Team
+This is tutor how to use this aegisub version 2.1.8 script
+The effect script mostly modified by me from Original author :
+#Pyonkichi
+#Karalaura
+#DiaNgucMau
+#Okazaki Matsue
+#Kehy
+#Akairisu
+You can find them easy on youtube
+Just type their name and be friend
+They are originally from Japan, Spain, Vietnam, France, Mexico and Russia. 
+And of course i am from Malaysia
+
+Okay let's start the tutorial ;
+1. Open ass file
+2. The question will appear "Do you want to load/unload the associated files?" then choose "Yes"
+3. Click "Automation" then hit "Apply karaoke template"
+4. Choose the 1st line of karaoke lyric then hit the play button under preview video.
+
+p/s : you can modified them urself and PM me if you had a problem, i'll try to help you as i can!
+mat_jc@yahoo.com

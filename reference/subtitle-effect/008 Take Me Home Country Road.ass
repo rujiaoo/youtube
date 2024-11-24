@@ -1,0 +1,27 @@
+﻿[Script Info]
+Title: Default Aegisub file
+ScriptType: v4.00+
+WrapStyle: 0
+PlayResX: 1280
+PlayResY: 720
+ScaledBorderAndShadow: yes
+Video File: ?dummy:23.976000:40000:1280:720:0:0:0:
+Video Aspect Ratio: 0
+Video Zoom: 4
+Video Position: 309
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: karaoke,KleinsAmazon,40,&H00FFFFFF,&H000000FF,&H00FF26FF,&H00000000,0,0,0,0,100,100,0,0,1,1,0,8,10,10,10,1
+Style: translation,Bell Gothic Std Black,34,&H00FFFFFF,&H000000FF,&H00FF26FF,&H00000000,0,-1,0,0,100,100,-1,0,1,2,0,2,10,10,10,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Comment: 0,0:00:00.00,0:00:00.00,translation,,0000,0000,0000,code syl all,factor = 20; function char_counter(ref) ci[ref] = ci[ref] + 1; return "" end; ci = { 0 }; cn = _G.unicode.len(orgline.text_stripped:gsub(" ","")); time = 680; ratio = 20; angle = 0.016
+Comment: 1,0:00:00.00,0:00:00.00,translation,,0000,0000,0000,template char,!retime("preline",factor*ci[1], $ldur+factor*(ci[1]-cn))!!char_counter(1)!{\blur3\an5\move(!$lcenter+ratio*math.cos(2*math.pi*(ci[1]-1)/(cn-1))!,!$middle+ratio*math.sin(4*math.pi*(ci[1]-1)/(cn-1))!,$center,$middle,0,!time!)\t(0,!time!,\fr-360)\fad(200,200)}
+Comment: 0,0:00:00.00,0:00:05.00,karaoke,lead-in,0000,0000,0000,template syl,!retime("start2syl",-100,0)!{\3c&HFF26FF&\blur3\an5\pos($center,$middle)}
+Comment: 0,0:00:00.00,0:00:12.88,karaoke,,0000,0000,0000,template line,{\K$kdur\t($start,$end)\blur3\c&H000000&\2c&HFFFFFF&}
+Comment: 0,0:00:12.88,0:00:20.68,karaoke,,0000,0000,0000,karaoke,{\k50}Coun{\k52}try {\k295}Roads {\k70}take {\k39}me {\k274}home
+Comment: 0,0:00:12.88,0:00:20.68,translation,,0000,0000,0000,karaoke,Jalan desa, bawaku ke kampung halaman
+Comment: 0,0:00:21.00,0:00:28.42,karaoke,,0000,0000,0000,karaoke,{\k58}To {\k39}the {\k279}place {\k63}I {\k25}be{\k278}long
+Comment: 0,0:00:21.00,0:00:28.42,translation,,0000,0000,0000,karaoke,Pergi ketempat aku sepatutnya berada

@@ -1,0 +1,35 @@
+﻿[Script Info]
+Title: Default Aegisub file
+ScriptType: v4.00+
+WrapStyle: 0
+PlayResX: 1280
+PlayResY: 720
+ScaledBorderAndShadow: yes
+Video File: ?dummy:23.976000:40000:1280:720:0:0:0:
+Video Aspect Ratio: 0
+Video Zoom: 4
+Video Position: 500
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Translation,DigifaceWide,30,&H002D92B4,&H000000FF,&H003ED4D6,&H00706F37,-1,-1,0,0,100,100,0,0,1,3,3,2,20,20,15,1
+Style: Karaoke,DigifaceWide,39,&H000770E5,&H0025C7C9,&H00000000,&H00717031,0,0,0,0,100,100,0,0,1,3,3,8,20,20,15,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Comment: 1,0:00:00.00,0:00:00.00,Translation,,0000,0000,0000,template,!retime("line",-200,-200)!{\an5\move(!$lcenter+0.5*$width!,$middle,$lcenter,$middle,0,300)\iclip(!$lcenter!,!$top-5!,!meta.res_x!,!$bottom+5!)\bord5\shad4\4c&H717031&\2c&HFFFFFF&\c&H25C7C9&\blur5\t(0,700,\bord2\1c!line.styleref.color1!\blur0)\t(0,300,\fscx114)\t(300,700,\fscx100)\fad(0,300)\be1}
+Comment: 1,0:00:00.00,0:00:00.00,Translation,,0000,0000,0000,template,!retime("line",-200,-200)!{\an5\move(!$lcenter-0.5*$width!,$middle,$lcenter,$middle,0,300)\iclip(0,!$top-5!,!$lcenter!,!$bottom+5!)\bord5\shad4\c&H717031&\2c&HFFFFFF&\c&H25C7C9&\blur5\t(0,700,\bord2\1c!line.styleref.color1!\blur0)\t(0,300,\fscx114)\t(300,700,\fscx100)\fad(0,300)\be1}
+Comment: 0,0:00:00.00,0:00:01.00,Translation,,0000,0000,0000,template notext,!retime("line",-200,-200)!{\an5\pos($center,$middle)\bord1\fscy0\shad0\4c&H717031&\2c&HFFFFFF&\c&H25C7C9&\fscx0\t(0,300,\fscx!$width+50!\fscy!0.5*$height!)\t(300,1000,\fscx!$width+100!\fscy0)\blur3\p1}m 50 0 l 0 50 l 50 100 l 150 50
+Comment: 0,0:00:00.12,0:00:00.12,Karaoke,,0000,0000,0000,code once,shape_size_ratio = 100
+Comment: 0,0:00:00.12,0:00:00.12,Karaoke,Get Scr Resolution,0000,0000,0000,code once,xres, yres = _G.aegisub.video_size() if xres == nil  then ratio = 1 else ratio = xres/1024 x_rat = ratio end if (xres and xres ~= meta.res_x) or (yres and yres ~= meta.res_y) then _G.aegisub.debug.out(2, "Warning: script resolution %dx%d does not match with loaded video resolution %dx%d resample script resolution", meta.res_x, meta.res_y, xres, yres) end
+Comment: 0,0:00:00.12,0:00:00.12,Karaoke,Get Frame Dur,0000,0000,0000,code once,msa = _G.aegisub.ms_from_frame(1) msb = _G.aegisub.ms_from_frame(101) if msa == nil and msb == nil then _G.aegisub.debug.out(2, "Warning: Please load the video or use dummy video.Frame duration was provisionally set to 33 milliseconds. ") frame_dur = 33  else frame_dur = (msb-msa)/100 end
+Comment: 0,0:00:00.12,0:00:00.12,Karaoke,,0000,0000,0000,code once,function set_temp(ref,val) temp[ref] = val return val end
+Comment: 0,0:00:00.12,0:00:00.12,Karaoke,,0000,0000,0000,code once,temp = {}
+Comment: 0,0:00:00.12,0:00:00.12,Karaoke,,0000,0000,0000,code line all,ci = { 0 }; cn = _G.unicode.len(orgline.text_stripped:gsub(" ",""))
+Comment: 0,0:00:00.12,0:00:00.12,Karaoke,,0000,0000,0000,code syl all,function char_counter(ref) ci[ref] = ci[ref] + 1; return "" end
+Comment: 1,0:00:00.12,0:00:00.12,Karaoke,lead-in,0000,0000,0000,template char,!char_counter(1)!!retime("start2syl",-1500+(ci[1]-1)*42,0)!{\an5\fad(420,0)\bord3\blur1\move(!$center-100*ratio!,$middle,$center,$middle,0,350)\fscx60\fscy60\frx180\t(0,700,0.8,\frx0\fscx100\fscy100)}
+Comment: 2,0:00:18.15,0:00:20.66,Karaoke,hilight&lead-out,0000,0000,0000,template syl,!retime("syl2end",-$dur,-$syln*100+syl.i*100)!{\an5\pos($center,$middle)\fad(0,300)\t(0,100,\bord5\blur3\3c&HFFFFFF&)\t(100,$dur,\bord3\blur1\3c!line.styleref.color3!\1c!line.styleref.color2!)}
+Comment: 0,0:00:18.15,0:00:20.66,Karaoke,,0000,0000,0000,karaoke,{\k25}Go{\k23}ki{\k18}ge{\k14}n {\k16}na {\k28}cho{\k11}u {\k16}ni {\k38}nat{\k88}te
+Comment: 0,0:00:18.15,0:00:20.66,Translation,,0000,0000,0000,karaoke,{\fnDigifaceWide\b1\i1\3c&H3ED4D6&\4c&H706F37&\c&H2D92B4&}Saya akan jadi rama-rama yang ceria
+Comment: 0,0:00:20.82,0:00:23.42,Karaoke,,0000,0000,0000,karaoke,{\k14\fnDigifaceWide\fs39\b1\fad(1000,1000)\4c&H717031&\2c&HFFFFFF&\c&H25C7C9&)}ki{\k34}ra{\k13}me{\k26}ku {\k11}ka{\k45}ze {\k22}ni {\k35}not{\k48}te
+Comment: 0,0:00:20.82,0:00:23.42,Translation,,0000,0000,0000,karaoke,{\fnDigifaceWide\b1\i1\3c&H3ED4D6&\4c&H706F37&\c&H2D92B4&}dan terbang bersama angin gemerlap
